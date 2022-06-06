@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:getx_calculator/controllers/calculator_controller.dart';
+import 'package:getx_calculator/widgets/calc_results.dart';
 
 import '../widgets/calculator_button.dart';
 
@@ -7,6 +10,7 @@ class CalculatorScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final calculatorController = Get.put(CalculatorController());
     return Scaffold(
       appBar: AppBar(
         title: const Text('GetxCalculator'),
@@ -17,25 +21,7 @@ class CalculatorScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Container(
-              alignment: Alignment.centerRight,
-              child: const Text(
-                '256 * 256',
-                style: TextStyle(fontSize: 30.0),
-              ),
-            ),
-            Container(
-                width: double.infinity,
-                height: 2,
-                color: Colors.white.withOpacity(0.4),
-                margin: const EdgeInsets.symmetric(vertical: 16)),
-            Container(
-              alignment: Alignment.centerRight,
-              child: const Text(
-                '65536',
-                style: TextStyle(fontSize: 40.0),
-              ),
-            ),
+            const CalcResults(),
             const SizedBox(height: 16.0),
 
             ///FirstRow
@@ -44,7 +30,7 @@ class CalculatorScreen extends StatelessWidget {
               children: [
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                  onPressed: () => calculatorController.cleanAll(),
                   bgColor: const Color(0xffA5A5A5),
                   text: 'AC',
                 )),
@@ -68,6 +54,7 @@ class CalculatorScreen extends StatelessWidget {
                 ))
               ],
             ),
+
             ///SecondRow
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -95,6 +82,7 @@ class CalculatorScreen extends StatelessWidget {
                 ))
               ],
             ),
+
             ///Third Row
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -122,6 +110,7 @@ class CalculatorScreen extends StatelessWidget {
                 ))
               ],
             ),
+
             ///Fourth Row
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -149,6 +138,7 @@ class CalculatorScreen extends StatelessWidget {
                 ))
               ],
             ),
+
             ///Fifth Row
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,

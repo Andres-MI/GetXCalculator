@@ -17,4 +17,21 @@ class CalculatorController extends GetxController {
     operation.value = '';
     result.value = '';
   }
+
+  addNumber(String number){
+    if(result.isEmpty || result.value == '0'){
+      return result.value = number;
+    } else {
+      //String concatenation
+      result.value = '${result.value}$number';
+    }
+  }
+
+  changeSignedNumber(){
+    if(result.value.startsWith('-')){
+      result.value = result.value.replaceFirst('-', '');
+    } else {
+      result.value = '-${result.value}';
+    }
+  }
 }

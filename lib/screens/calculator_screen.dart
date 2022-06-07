@@ -36,7 +36,7 @@ class CalculatorScreen extends StatelessWidget {
                 )),
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                  onPressed: () => calculatorController.changeSignedNumber(),
                   bgColor: const Color(0xffA5A5A5),
                   text: '+/-',
                 )),
@@ -61,17 +61,23 @@ class CalculatorScreen extends StatelessWidget {
               children: [
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    calculatorController.addNumber('7');
+                  },
                   text: '7',
                 )),
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                      onPressed: () {
+                        calculatorController.addNumber('8');
+                      },
                   text: '8',
                 )),
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                      onPressed: () {
+                        calculatorController.addNumber('9');
+                      },
                   text: '9',
                 )),
                 Expanded(
@@ -89,17 +95,23 @@ class CalculatorScreen extends StatelessWidget {
               children: [
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                      onPressed: () {
+                        calculatorController.addNumber('4');
+                      },
                   text: '4',
                 )),
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                      onPressed: () {
+                        calculatorController.addNumber('5');
+                      },
                   text: '5',
                 )),
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                      onPressed: () {
+                        calculatorController.addNumber('6');
+                      },
                   text: '6',
                 )),
                 Expanded(
@@ -117,17 +129,23 @@ class CalculatorScreen extends StatelessWidget {
               children: [
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                      onPressed: () {
+                        calculatorController.addNumber('1');
+                      },
                   text: '1',
                 )),
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                      onPressed: () {
+                        calculatorController.addNumber('2');
+                      },
                   text: '2',
                 )),
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                      onPressed: () {
+                        calculatorController.addNumber('3');
+                      },
                   text: '3',
                 )),
                 Expanded(
@@ -146,7 +164,9 @@ class CalculatorScreen extends StatelessWidget {
                 Expanded(
                     flex: 2,
                     child: CalcButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        calculatorController.addNumber('0');
+                      },
                       text: '0',
                     )),
                 Expanded(

@@ -21,17 +21,22 @@ class CalculatorController extends GetxController {
   addNumber(String number){
     if(result.isEmpty || result.value == '0'){
       return result.value = number;
-    } else {
+    }else if (result.value == '-0'){
+      return result.value = '-$number';
+    }
+    else {
       //String concatenation
       result.value = '${result.value}$number';
     }
   }
 
   changeSignedNumber(){
-    if(result.value.startsWith('-')){
-      result.value = result.value.replaceFirst('-', '');
-    } else {
-      result.value = '-${result.value}';
+    if(result.value.isNotEmpty) {
+      if (result.value.startsWith('-')) {
+        result.value = result.value.replaceFirst('-', '');
+      } else {
+        result.value = '-${result.value}';
+      }
     }
   }
 }

@@ -25,9 +25,12 @@ class CalcResults extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(vertical: 16)),
             Container(
               alignment: Alignment.centerRight,
-              child: Text(
-                '${calculatorController.result}',
-                style: const TextStyle(fontSize: 40.0),
+              child: FittedBox(
+                fit: BoxFit.contain,
+                child: Text(
+                  ' ${calculatorController.result}',
+                  style: const TextStyle(fontSize: 40.0),
+                ),
               ),
             ),
           ],

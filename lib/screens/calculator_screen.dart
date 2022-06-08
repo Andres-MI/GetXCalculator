@@ -171,7 +171,9 @@ class CalculatorScreen extends StatelessWidget {
                     )),
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    calculatorController.addDecimalPoint();
+                  },
                   text: '.',
                 )),
                 Expanded(

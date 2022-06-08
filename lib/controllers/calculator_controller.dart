@@ -30,13 +30,22 @@ class CalculatorController extends GetxController {
     }
   }
 
-  changeSignedNumber(){
-    if(result.value.isNotEmpty) {
+  changeSignedNumber() {
+    if (result.value.isNotEmpty) {
       if (result.value.startsWith('-')) {
         result.value = result.value.replaceFirst('-', '');
       } else {
         result.value = '-${result.value}';
       }
+    }
+  }
+
+  addDecimalPoint() {
+    if (result.value.contains('.')) return;
+    if (result.value.isEmpty || result.value.startsWith('0')) {
+      result.value = "0.";
+    } else {
+      result.value = '${result.value}.';
     }
   }
 }

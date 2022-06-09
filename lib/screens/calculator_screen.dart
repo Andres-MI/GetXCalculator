@@ -42,13 +42,17 @@ class CalculatorScreen extends StatelessWidget {
                 )),
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    calculatorController.deleteLastEntry();
+                  },
                   bgColor: const Color(0xffA5A5A5),
                   text: 'del',
                 )),
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    calculatorController.setOperation('/');
+                  },
                   bgColor: const Color(0xffF0A23B),
                   text: '/',
                 ))
@@ -82,7 +86,9 @@ class CalculatorScreen extends StatelessWidget {
                 )),
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    calculatorController.setOperation('x');
+                  },
                   bgColor: const Color(0xffF0A23B),
                   text: 'x',
                 ))
@@ -116,7 +122,9 @@ class CalculatorScreen extends StatelessWidget {
                 )),
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    calculatorController.setOperation('-');
+                  },
                   bgColor: const Color(0xffF0A23B),
                   text: '-',
                 ))
@@ -150,7 +158,9 @@ class CalculatorScreen extends StatelessWidget {
                 )),
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    calculatorController.setOperation('+');
+                  },
                   bgColor: const Color(0xffF0A23B),
                   text: '+',
                 ))

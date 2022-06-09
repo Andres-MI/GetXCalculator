@@ -7,7 +7,7 @@ class CalculatorController extends GetxController {
   var digitsScreen = "10x10".obs;
   var result = "100".obs;
 
-  String getScreenValue(){
+  String getScreenValue() {
     return '$firstNumber $operation $secondNumber';
   }
 
@@ -18,13 +18,12 @@ class CalculatorController extends GetxController {
     result.value = '';
   }
 
-  addNumber(String number){
-    if(result.isEmpty || result.value == '0'){
+  addNumber(String number) {
+    if (result.isEmpty || result.value == '0') {
       return result.value = number;
-    }else if (result.value == '-0'){
+    } else if (result.value == '-0') {
       return result.value = '-$number';
-    }
-    else {
+    } else {
       //String concatenation
       result.value = '${result.value}$number';
     }
@@ -46,6 +45,20 @@ class CalculatorController extends GetxController {
       result.value = "0.";
     } else {
       result.value = '${result.value}.';
+    }
+  }
+
+  setOperation(String newOperation) {
+    operation.value = newOperation;
+    firstNumber.value = (result.value.isEmpty ? '0' : result.value);
+    result.value = '0';
+  }
+
+  deleteLastEntry() {
+    if (result.value.replaceAll('-', '').length > 1) {
+      result.value = result.value.substring(0, result.value.length - 1);
+    } else {
+      result.value = '0';
     }
   }
 }

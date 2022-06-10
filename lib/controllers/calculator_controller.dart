@@ -61,4 +61,29 @@ class CalculatorController extends GetxController {
       result.value = '0';
     }
   }
+
+  calculateResult() {
+    double num1 = double.parse(firstNumber.value);
+    double num2 = double.parse(result.value);
+    secondNumber.value = result.value;
+
+    switch (operation.value) {
+      case '+':
+        result.value = '${num1 + num2}';
+        break;
+      case '-':
+        result.value = '${num1 - num2}';
+        break;
+      case 'x':
+        result.value = '${num1 * num2}';
+        break;
+      case '/':
+        result.value = '${num1 / num2}';
+        break;
+    }
+
+    if (result.value.endsWith('.0')) {
+      result.value = result.value.substring(0, result.value.length - 2);
+    }
+  }
 }

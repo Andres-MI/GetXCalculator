@@ -188,7 +188,9 @@ class CalculatorScreen extends StatelessWidget {
                 )),
                 Expanded(
                     child: CalcButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    calculatorController.calculateResult();
+                  },
                   bgColor: const Color(0xffF0A23B),
                   text: '=',
                 ))
